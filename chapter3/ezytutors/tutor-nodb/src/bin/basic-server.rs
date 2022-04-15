@@ -2,12 +2,12 @@
 use actix_web::{web, App, HttpResponse, HttpServer, Responder};
 use std::io;
 
-// Configure route <1>
+// Configure route
 pub fn general_routes(cfg: &mut web::ServiceConfig) {
     cfg.route("/health", web::get().to(health_check_handler));
 }
 
-// Configure handler <2>
+// Configure handler
 pub async fn health_check_handler() -> impl Responder {
     HttpResponse::Ok().json("Hello. EzyTutors is alive and kicking")
 }
